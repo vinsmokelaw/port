@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
+  <nav class="navbar">
         <a href="#" class="logo">Portfolio</a>
-        <ul>
+        <div class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul id="nav-links">
             <li class="active"><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -21,23 +24,40 @@
     </nav>
 
     <section class="home">
-        <div class="home-infozone       ">
-            <h1>Tawanda (Vinsmoke) Muchenu</h1>
-            <h2>I'm a Developer</h2>
-            <p>Welcome to my portfolio! I am a passionate developer with a keen interest in creating innovative solutions. Explore my work and get to know more about me.</p>
-            <div class="btn-sci">
+    <div class="home-info">
+        <h1>Tawanda (Vinsmoke) Muchenu</h1>
+        <h2>I'm a Developer</h2>
+        <p>Welcome to my portfolio! I am a passionate developer with a keen interest in creating innovative solutions. Explore my work and get to know more about me.</p>
+        <div class="btn-sci">
+            <div class="sci">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-square-whatsapp"></i></a>
+            </div>
                 <a href="#" class="btn">Download CV</a>
-                <!-- <a href="#" class="btn">Contact Me</a> -->
-                 <div class="sci">
-                    <a href="github"><i class="ri-github-fill"></i></a>
-                    <a href="linkedin"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="youtube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="whatsapp"><i class="fa-brands fa-square-whatsapp"></i></a>
-                 </div>
+            </div>
+        </div>
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="Skeleton developer sticker - programmer - engineer - coder - software developer - computer science - STEM - tech - cute laptop sticker.jpeg" alt="">
+                </div>
             </div>
         </div>
     </section>
-    
+
+<script>
+        const toggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav-links');
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            toggle.classList.toggle('active');
+        });
+</script>
+
+
+
 </body>
 </html>

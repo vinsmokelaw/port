@@ -1,98 +1,200 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
+/* Base styles */
 body {
     background-color: #1f242d;
-    color: #333;
+    color: bisque;
 }
 
 a {
     text-decoration: none;
-    color:bisque;
+    color: bisque;
 }
 
 .navbar {
-  position: absolute;
-  left: 0;
-  top:0;
-  width: 100%;
-  padding: 5% 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-  /* background-color: crimson; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem 5rem; /* 40px = 2.5rem, 80px = 5rem */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 }
 
 .navbar .logo {
-    font-size: 30px;
+    font-size: 1.875rem; /* 30px */
     font-weight: 800;
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
-    
 }
 
 .navbar ul li {
-    margin: 0 15px;
+    margin: 0 0.9375rem; /* 15px */
 }
 
 .navbar ul li a {
-    font-size: 20px;
+    font-size: 1.25rem; /* 20px */
     font-weight: 500;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-.navbar ul li:hover a, 
+.navbar ul li:hover a,
 .navbar ul li.active a {
     color: #420b7d;
 }
 
+/* Home Section */
 .home {
     display: flex;
     align-items: center;
     height: 100vh;
-    padding: 60px 10% 0;
-    color: bisque   ;
+    padding: 3.75rem 5rem 0; /* 60px = 3.75rem */
+    color: bisque;
 }
 
-.home-info h1{
-    font-size: 50px;
-    margin-top: -10px;
+.home-info {
+    max-width: 43.75rem; /* 700px */
+}
 
+.home-info h1 {
+    font-size: 3.125rem; /* 50px */
+    margin-top: -0.625rem; /* -10px */
 }
 
 .home-info h2 {
-    font-size: 30px;
-    margin-top: -15px;
+    font-size: 1.875rem; /* 30px */
+    margin-top: -0.9375rem; /* -15px */
 }
 
 .home-info p {
-    font-size: 20px;
-    margin: 10px 0 20px;
+    font-size: 1.25rem; /* 20px */
+    margin: 0.625rem 0 1.25rem; /* 10px, 20px */
     line-height: 1.5;
-
 }
 
 .home-info .btn-sci {
     display: flex;
     align-items: center;
-    gap: 30px;
-    
+    gap: 1.25rem; /* 20px */
+    flex-wrap: wrap;
+}
+
+.home-info .sci {
+    display: flex;
+    gap: 0.625rem; /* 10px */
+}
+
+.home-info .sci a {
+    display: inline-flex;
+    padding: 0.5rem; /* 8px */
+    border: 0.125rem solid #420b7d; /* 2px */
+    border-radius: 50%;
+    font-size: 1.25rem; /* 20px */
+    color: #420b7d;
+    transition: 0.5s;
+}
+
+.home-info .sci a:hover {
+    background-color: #420b7d;
+    color: bisque;
+    box-shadow: 0 0 0.625rem #420b7d; /* 10px */
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 25px;
-    background: #420b7d;
-    border: 2px solid #420b7d;
-    border-radius: 35px;
-    box-shadow: 0 0 10px #420b7d;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    background-color: #420b7d;
+    border-radius: 1.875rem; /* 30px */
+    box-shadow: 0 0 0.625rem #420b7d; /* 10px */
+    font-size: 1rem; /* 16px */
+    color: bisque;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: bisque;
+    box-shadow: 0 0 0.625rem bisque;
+}
+
+.home-img {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.home-img .img-box {
+    width: 15rem;
+    height: 15rem;/* You can remove this if not needed */
+    border-radius: 50%;
+    overflow: hidden; /* ensures the image stays inside the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-img .img-box .img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem; /* 24px */
+    cursor: pointer;
+    z-index: 200;
+    color: bisque;
+}
+
+/* Responsive */
+@media (max-width: 48rem) { /* 768px */
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        padding: 1.25rem 1.25rem; /* 20px */
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #1f242d;
+        width: 100%;
+        padding: 1.25rem; /* 20px */
+        z-index: 100;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 0.625rem 0; /* 10px */
+    }
+
+    .home {
+        padding: 6.25rem 1.25rem; /* 100px 20px */
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home-info .btn-sci {
+        justify-content: center;
+    } 
 }
