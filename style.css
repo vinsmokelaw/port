@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1f242d;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color:bisque;
+}
+
+.navbar {
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  padding: 5% 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  /* background-color: crimson; */
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.navbar ul li:hover a, 
+.navbar ul li.active a {
+    color: #420b7d;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 60px 10% 0;
+    color: bisque   ;
+}
+
+.home-info h1{
+    font-size: 50px;
+    margin-top: -10px;
+
+}
+
+.home-info h2 {
+    font-size: 30px;
+    margin-top: -15px;
+}
+
+.home-info p {
+    font-size: 20px;
+    margin: 10px 0 20px;
+    line-height: 1.5;
+
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #420b7d;
+    border: 2px solid #420b7d;
+    border-radius: 35px;
+    box-shadow: 0 0 10px #420b7d;
+}
